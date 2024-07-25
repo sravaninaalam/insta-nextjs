@@ -1,8 +1,10 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
+import Authentication from './Authentication'
 export default function Header() {
+ 
   return (
   <>
     <div className='flex justify-between items-center max-w-6xl mx-auto sticky top-0'>
@@ -17,7 +19,7 @@ export default function Header() {
             <input type='text' className='p-2 m-2 bg-gray-50' placeholder='search'/>
         </div>
         <div>
-            <button>Login</button>
+            <Authentication/>
         </div>
     </div>
   </>
