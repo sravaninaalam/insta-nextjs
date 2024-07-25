@@ -19,7 +19,8 @@ export const options={
     async authorize(credentials, req) {
       // const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
      
-      const user=users.find((item)=>item.name.toLowerCase()===credentials.username.toLowerCase())
+      const user=users.find((item)=>(item.name.toLowerCase()===credentials.username.toLowerCase()) && 
+    (item.password==credentials.password))
       if (user) {
        return user
       } else {
