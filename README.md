@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+HEder component=>logo search and profile
+To add react model (install react-model);for icons(react-icons)
+we needd model in react header to upload images ;import Modal from 'react-model'
+we need to state to track the model whether it is opened or not;initial val =false
+
+
+
+

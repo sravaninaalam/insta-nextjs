@@ -1,10 +1,20 @@
 "use client"
 import { useSession, signIn, signOut } from "next-auth/react"
+import { IoIosAddCircleOutline } from "react-icons/io";
 import Image from "next/image"
+import { useState } from "react";
+import Model from "./Model";
+
+ import { FaCamera } from "react-icons/fa";
+ import { RxCross2 } from "react-icons/rx";
 export default function Authentication() {
     const {data:session}=useSession()
+    const[isModalOpen,setIsModalOpen]=useState(false)
   return (
-    <div>
+    <>
+    <div className="flex gap-5 items-center "> 
+      <IoIosAddCircleOutline className="text-2xl cursor-pointer" onClick={()=>setIsModalOpen(true)}/>
+      <div>
         {session ? <div className="flex">
           {session?.user?.image ? <div>
             {/* Profile pic media queries- above medium devices */}
@@ -22,6 +32,9 @@ export default function Authentication() {
             <button onClick={signOut} className="mx-3 hidden md:block">Sign out</button>
         </div>:<div>
             <button onClick={signIn}>Sign In</button></div>}
+     </div>
     </div>
+    {isModalOpen && <Model isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>}
+    </>
   )
 }
